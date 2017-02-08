@@ -25,6 +25,8 @@
   border-radius:3px;
   width: 294px;
   height: 40px;
+  text-align: right;
+  line-height: 40px;
 }
 
 .buttons {overflow:hidden;}
@@ -48,4 +50,10 @@ span.op{margin-right: 0px;}
 
 #equals {
   width:293px;
+}
+
+.buttons span:hover {
+	background: #cccccc;
+	color: white;
+  cursor: crosshair;
 }
