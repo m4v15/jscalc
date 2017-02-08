@@ -1,0 +1,51 @@
+/*RESET*/
+
+* {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  color:black;
+  box-sizing: border-box;
+}
+
+#calc {
+    width: 350px;
+    height: auto;
+    padding: 25px;
+    margin: 25px auto;
+    background: grey;
+    border-radius: 10px;
+
+}
+
+#screen {
+  border: 5px solid black;
+  background-color: white;
+  margin: 5px;
+  border-radius:3px;
+  width: 294px;
+  height: 40px;
+}
+
+.buttons {overflow:hidden;}
+
+.buttons span {
+  float: left;
+  width:66px;
+  height:30px;
+  line-height: 30px;
+  background-color: #DFDAD9;
+  border:1px solid black;
+  border-radius: 3px;
+  margin: 5px;
+  text-align: center;
+
+}
+
+span.op{margin-right: 0px;}
+
+#c{margin-right: 0px;}
+
+#equals {
+  width:293px;
+}
