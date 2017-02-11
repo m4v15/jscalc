@@ -2,12 +2,15 @@
 window.onload = function(){
 
 var keys = document.querySelectorAll('#calc span');
-var screenface = document.getElementById('screen');
+var screenface = document.getElementById('screen1');
+var miniscreenface = document.getElementById('screen2');
 var theSum='';
 
 var buttonclick = function(e){
   if (this.innerHTML!=='='){
   screenface.innerHTML = this.innerHTML;
+  miniscreenface.innerHTML += this.innerHTML;
+
   theSum +=this.innerHTML;
 };
 if (this.innerHTML==='='&&(theSum)){

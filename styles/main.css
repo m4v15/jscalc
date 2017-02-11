@@ -7,13 +7,16 @@
   color:black;
   box-sizing: border-box;
 }
+body{
+  background-color: black;
+}
 
 #calc {
     width: 350px;
     height: auto;
     padding: 25px;
     margin: 25px auto;
-    background: grey;
+    background: #f2f2f2;
     border-radius: 10px;
 
 }
@@ -27,6 +30,25 @@
   height: 40px;
   text-align: right;
   line-height: 40px;
+}
+
+#screen1 {
+  float:left;
+  padding-right:2px;
+  width: 283px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  text-align: right;
+}
+
+#screen2 {
+  float: left;
+  width: 285px;
+  height: 10px;
+  line-height: 10px;
+  font-size: 10px;
+  text-align: left;
 }
 
 .buttons {overflow:hidden;}
