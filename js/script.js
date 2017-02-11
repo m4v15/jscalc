@@ -1,19 +1,18 @@
 //comment
 window.onload = function(){
-
-var keys = document.querySelectorAll('#calc span');
-var screen1 = document.getElementById('screen1');
-var screen2 = document.getElementById('screen2');
-var theSum='';
-var decimalpressed=false;
-var lastbutton
-
 //FIX THIS:
 //Clear buttonclick DONE
 //decimal point twice DONE
 //pressing a number after the calculation should just clear as well
 //can't press two operators in a row
 //something about negative numbers
+
+
+var keys = document.querySelectorAll('#calc span');
+var screen1 = document.getElementById('screen1');
+var screen2 = document.getElementById('screen2');
+var theSum='';
+var decimalpressed=false;
 
 var buttonclick = function(e){
 
@@ -35,14 +34,39 @@ var buttonclick = function(e){
     decimalpressed=true;
   }
 
-//what happens when numbers or operators are pressed
-  if (this.className!=='func'){
+//what happens when numbers are pressed
+  if (this.className!=='func'&&this.className!=='op'){
     screen1.innerHTML = this.innerHTML; //replace characters on main screen
-    screen2.innerHTML += this.innerHTML;  //add to characters on secondary
 
+    if (lastbutton.id==='equals'){ //stops just adding a digit to the last calculation
+      screen2.innerHTML = this.innerHTML;
+      theSum = this.innerHTML;
+    };
+    if (lastbutton.id!=='equals'){
     theSum +=this.innerHTML; //add to theSum variable
+    screen2.innerHTML = theSum;
+    };
+
     lastbutton=this;
-    if (this.className==='op'){decimalpressed=false}; //revert decimalpressed to false after op
+  };
+
+  //operators
+  if (this.className==='op'){
+
+    screen1.innerHTML = this.innerHTML; //replace characters on main screen
+
+    if (lastbutton.className!=='op'){
+      screen2.innerHTML += this.innerHTML;  //add to characters on secondary
+      theSum +=this.innerHTML; //add to theSum variable
+
+    };
+    if (lastbutton.className==='op'){ //when operators are pressed consecutively
+      theSum=theSum.slice(0,theSum.length-1)+this.innerHTML;
+      screen2.innerHTML=theSum;
+    }
+    decimalpressed=false;
+    lastbutton=this;
+     //revert decimalpressed to false after op
   };
 
 
@@ -61,8 +85,12 @@ var buttonclick = function(e){
   };
 };
 
+
 for (var i=0; i<keys.length;i++){
   keys[i].addEventListener('click',buttonclick, false);
 };
+
+var lastbutton=keys[12]//to avoid error when functions act on lastbutton
+
 
 }
