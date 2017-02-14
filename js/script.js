@@ -30,6 +30,10 @@ var buttonclick = function(e){
     screen2.innerHTML += this.innerHTML;  //add to characters on secondary
 
     theSum +=this.innerHTML; //add to theSum variable
+    if (lastbutton.id==='equals'){ //stops just adding a digit to the last calculation
+      screen2.innerHTML = this.innerHTML;
+      theSum = this.innerHTML;
+    };
     lastbutton=this;
     decimalpressed=true;
   }
