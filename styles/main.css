@@ -83,7 +83,7 @@ span.op{margin-right: 0px;}
 .buttons span:hover {
 	background: #cccccc;
 	color: white;
-  cursor: crosshair;
+  cursor: pointer;
 }
 
 .buttons span:active {
